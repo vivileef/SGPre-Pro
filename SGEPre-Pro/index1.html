@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistema de Prácticas - ULEAM</title>
+     <link rel="icon" href="LOGO-ULEAM.png"/>
+     <link rel="stylesheet" href="index1.css">
+</head>
+<body>
+    <div class="top-bar">
+        <img src="LOGO-ULEAM-VERTICAL.png" alt="Logo ULEAM" class="logo-uleam">
+        <span class="titulo-top">Universidad Laica Eloy Alfaro de Manabí</span>
+    </div>
+
+    <div class="container">
+        <h1>Sistema de Prácticas Preprofesionales</h1>
+        <div id="main-login">
+            <h2>Seleccione una opción</h2>
+            <button onclick="showLogin('universidad')">Universidad</button>
+            <button onclick="showLogin('empresa')">Empresa</button>
+        </div>
+
+        <div id="universidad-options" class="hidden">
+            <h3>Selecciona tu rol</h3>
+            <button onclick="showSubLogin('estudiante')">Estudiante</button>
+            <button onclick="showSubLogin('tutorAcademico')">Tutor Académico</button>
+            <button onclick="showSubLogin('coordinador')">Coordinador Académico</button>
+            <button onclick="goBack()">⬅ Volver</button>
+        </div>
+
+        <!-- Formularios de Login -->
+        <form id="estudiante" class="login-form hidden">
+            <h3>Login Estudiante</h3>
+            <input type="email" name="email" placeholder="Email" required>
+            <input type="password" name="contrasena" placeholder="Contraseña" required>
+            <button type="submit" class="btn-login">Iniciar Sesión</button>
+            <button type="button" onclick="register('estudiante')">Registrarse</button>
+            <button type="button" onclick="goBack()">⬅ Volver</button>
+            <p class="olvidar-contrasena"><a href="recuperar_contrasena.html">¿Olvidó su contraseña?</a></p>
+        </form>
+
+        <form id="tutorAcademico" class="login-form hidden">
+            <h3>Login Tutor Académico</h3>
+            <input type="email" name="email" placeholder="Email" required>
+            <input type="password" name="contrasena" placeholder="Contraseña" required>
+            <button type="submit">Iniciar Sesión</button>
+            <button type="button" onclick="register('tutorAcademico')">Registrarse</button>
+            <button type="button" onclick="goBack()">⬅ Volver</button>
+            <p class="olvidar-contrasena"><a href="recuperar_contrasena.html">¿Olvidó su contraseña?</a></p>
+        </form>
+
+        <form id="coordinador" class="login-form hidden">
+            <h3>Login Coordinador Académico</h3>
+            <input type="email" name="email" placeholder="Email" required>
+            <input type="password" name="contrasena" placeholder="Contraseña" required>
+            <button type="submit">Iniciar Sesión</button>
+            <button type="button" onclick="register('coordinador')">Registrarse</button>
+            <button type="button" onclick="goBack()">⬅ Volver</button>
+            <p class="olvidar-contrasena"><a href="recuperar_contrasena.html">¿Olvidó su contraseña?</a></p>
+        </form>
+
+        <form id="empresa" class="login-form hidden">
+            <h3>Login Tutor Empresarial</h3>
+            <input type="email" name="email" placeholder="Email" required>
+            <input type="password" name="contrasena" placeholder="Contraseña" required>
+            <button type="submit">Iniciar Sesión</button>
+            <button type="button" onclick="register('empresa')">Registrarse</button>
+            <button type="button" onclick="goBack()">⬅ Volver</button>
+            <p class="olvidar-contrasena"><a href="recuperar_contrasena.html">¿Olvidó su contraseña?</a></p>
+        </form>
+
+        <!-- Formularios de Registro -->
+        <form id="registro-estudiante" class="login-form hidden" onsubmit="guardarRegistro(event, 'estudiante')">
+            <h3>Registro Estudiante</h3>
+            <div class="campo-grupo">
+                <input type="text" name="nombres" placeholder="Nombres" required>
+                <span class="error-message"></span>
+            </div>
+            <div class="campo-grupo">
+                <input type="text" name="apellidos" placeholder="Apellidos" required>
+                <span class="error-message"></span>
+            </div>
+            <div class="campo-grupo">
+                <input type="text" name="identificacion" placeholder="Número de identificación (DNI, pasaporte)" required>
+                <span class="error-message"></span>
+            </div>
+            
+            <div class="campo-grupo">
+                <input type="date" name="fechaNacimiento" placeholder="Fecha de Nacimiento" required>
+                <span class="error-message"></span>
+            </div>
+            <div class="campo-grupo">
+                <select name="genero" class="select-estilo" required>
+                    <option value="" disabled selected>Seleccione su género</option>
+                    <option value="femenino">Femenino</option>
+                    <option value="masculino">Masculino</option>
+                    <option value="otro">Otro</option>
+                    <option value="prefiero-no-decir">Prefiero no decir</option>
+                </select>
+                <span class="error-message"></span>
+            </div>
+            <div class="campo-grupo">
+                <input type="tel" name="telefono" placeholder="Teléfono" required>
+                <span class="error-message"></span>
+            </div>
+            <div class="campo-grupo">
+                <input type="email" name="email" placeholder="Email" required>
+                <span class="error-message"></span>
+            </div>
+            <div class="campo-grupo">
+                <input type="password" name="contrasena" placeholder="Contraseña" required>
+                <span class="error-message"></span>
+            </div>
+            <button type="submit">Registrar</button>
+            <button type="button" onclick="goBack()">⬅ Volver</button>
+        </form>
+
+        <!-- FORMULARIO TUTOR ACADÉMICO -->
+        <form id="registro-tutorAcademico" class="login-form hidden" onsubmit="guardarRegistro(event, 'tutorAcademico')">
+            <h3>Registro Tutor Académico</h3>
+            <div class="campo-grupo">
+                <input type="text" name="nombres" placeholder="Nombres" required>
+                <span class="error-message"></span>
+            </div>
+            <div class="campo-grupo">
+                <input type="text" name="apellidos" placeholder="Apellidos" required>
+                <span class="error-message"></span>
+            </div>
+            <div class="campo-grupo">
+                <input type="text" name="identificacion" placeholder="Número de identificación (DNI, pasaporte)" required>
+                <span class="error-message"></span>
+            </div>
+            <div class="campo-grupo">
+                <input type="text" name="cargo" placeholder="Cargo/Posición Actual" required>
+                <span class="error-message"></span>
+            </div>
+            <div class="campo-grupo">
+                <select name="Facultad" class="select-estilo" required>
+                    <option value="" disabled selected>Seleccione la Facultad/Departamento</option>
+                    <option value="Facultad de Ciencias de la Salud">Facultad de Ciencias de la Salud</option>
+                    <option value="Facultad de Ciencias Administrativas, Contables y Comercio">Facultad de Ciencias Administrativas, Contables y Comercio</option>
+                    <option value="Facultad de Educacion, Turismo, Artes y Humanidades">Facultad de Educacion, Turismo, Artes y Humanidades</option>
+                    <option value="Facultad de Ingenieria, Industria y Arquitectura">Facultad de Ingenieria, Industria y Arquitectura</option>
+                    <option value="Facultad de Ciencias de la Vida y Tecnologias">Facultad de Ciencias de la Vida y Tecnologias</option>
+                     <option value="Facultad de Ciencias Sociales, Derecho y Bienestar">Facultad de Ciencias Sociales, Derecho y Bienestar</option>
+                </select>
+                <span class="error-message"></span>
+            </div>
+            <div class="campo-grupo">
+                <input type="tel" name="telefono" placeholder="Teléfono" required>
+                <span class="error-message"></span>
+            </div>
+            <div class="campo-grupo">
+                <input type="email" name="email" placeholder="Email" required>
+                <span class="error-message"></span>
+            </div>
+            <div class="campo-grupo">
+                <input type="password" name="contrasena" placeholder="Contraseña" required>
+                <span class="error-message"></span>
+            </div>
+            <button type="submit">Registrar</button>
+            <button type="button" onclick="goBack()">⬅ Volver</button>
+        </form>
+
+        <!-- FORMULARIO COORDINADOR ACADÉMICO -->
+        <form id="registro-coordinador" class="login-form hidden" onsubmit="guardarRegistro(event, 'coordinador')">
+            <h3>Registro Coordinador Académico</h3>
+            <div class="campo-grupo">
+                <input type="text" name="nombres" placeholder="Nombres" required>
+                <span class="error-message"></span>
+            </div>
+            <div class="campo-grupo">
+                <input type="text" name="apellidos" placeholder="Apellidos" required>
+                <span class="error-message"></span>
+            </div>
+            <div class="campo-grupo">
+                <input type="text" name="identificacion" placeholder="Número de identificación (DNI, pasaporte)" required>
+                <span class="error-message"></span>
+            </div>
+            <div class="campo-grupo">
+                <input type="text" name="cargo" placeholder="Cargo/Posición Actual" required>
+                <span class="error-message"></span>
+            </div>
+             <div class="campo-grupo">
+                <select name="Facultad/Departamento" class="select-estilo" required>
+                    <option value="" disabled selected>Seleccione la Facultad/Departamento</option>
+                    <option value="Facultad de Ciencias de la Salud">Facultad de Ciencias de la Salud</option>
+                    <option value="Facultad de Ciencias Administrativas, Contables y Comercio">Facultad de Ciencias Administrativas, Contables y Comercio</option>
+                    <option value="Facultad de Educacion, Turismo, Artes y Humanidades">Facultad de Educacion, Turismo, Artes y Humanidades</option>
+                    <option value="Facultad de Ingenieria, Industria y Arquitectura">Facultad de Ingenieria, Industria y Arquitectura</option>
+                    <option value="Facultad de Ciencias de la Vida y Tecnologias">Facultad de Ciencias de la Vida y Tecnologias</option>
+                     <option value="Facultad de Ciencias Sociales, Derecho y Bienestar">Facultad de Ciencias Sociales, Derecho y Bienestar</option>
+                </select>
+                <span class="error-message"></span>
+            </div>
+            <div class="campo-grupo">
+                <input type="tel" name="telefono" placeholder="Teléfono" required>
+                <span class="error-message"></span>
+            </div>
+            <div class="campo-grupo">
+                <input type="email" name="email" placeholder="Email" required>
+                <span class="error-message"></span>
+            </div>
+            <div class="campo-grupo">
+                <input type="password" name="contrasena" placeholder="Contraseña" required>
+                <span class="error-message"></span>
+            </div>
+            <button type="submit">Registrar</button>
+            <button type="button" onclick="goBack()">⬅ Volver</button>
+        </form>
+
+        <!-- FORMULARIO TUTOR EMPRESARIAL -->
+        <form id="registro-empresa" class="login-form hidden" onsubmit="guardarRegistro(event, 'empresa')">
+            <h3>Registro Tutor Empresarial</h3>
+            <div class="campo-grupo">
+                <input type="text" name="nombres" placeholder="Nombres" required>
+                <span class="error-message"></span>
+            </div>
+            <div class="campo-grupo">
+                <input type="text" name="apellidos" placeholder="Apellidos" required>
+                <span class="error-message"></span>
+            </div>
+            <div class="campo-grupo">
+                <input type="text" name="identificacion" placeholder="Número de identificación (DNI, pasaporte)" required>
+                <span class="error-message"></span>
+            </div>
+            <div class="campo-grupo">
+                <input type="text" name="cargo" placeholder="Cargo/Posición Actual" required>
+                <span class="error-message"></span>
+            </div>
+            <div class="campo-grupo">
+                <input type="text" name="empresa" placeholder="Nombre de la Empresa" required>
+                <span class="error-message"></span>
+            </div>
+            <div class="campo-grupo">
+                <input type="tel" name="telefono" placeholder="Teléfono" required>
+                <span class="error-message"></span>
+            </div>
+            <div class="campo-grupo">
+                <input type="email" name="email" placeholder="Email" required>
+                <span class="error-message"></span>
+            </div>
+            <div class="campo-grupo">
+                <input type="password" name="contrasena" placeholder="Contraseña" required>
+                <span class="error-message"></span>
+            </div>
+            <button type="submit">Registrar</button>
+            <button type="button" onclick="goBack()">⬅ Volver</button>
+        </form>
+    </div>
+    <script src="script1.js"></script>
+    <script src="validaciones.js"></script>
+</body>
+</html>

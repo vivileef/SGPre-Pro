@@ -1,0 +1,139 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(to bottom right, #f8f9fa, #e9ecef);
+    background-attachment: fixed;
+    color: #333;
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    position: relative;
+    z-index: 1;
+    line-height: 1.6;
+    margin-top: 60px; 
+
+}
+
+body::after {
+    content: "";
+    background: url('LOGO-ULEAM.png') center/70% no-repeat;
+    opacity: 0.1;
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    z-index: -1;
+}
+
+.top-bar {
+    background: linear-gradient(135deg,#466205,#628908, #7fae10, #62a01a, #628908, #466205);
+    border-top: 2px solid #466205;  
+    border-bottom: 3px solid #466205;
+    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.15); 
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 80px; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    gap: 20px;  
+}
+
+.logo-uleam {
+    height: 80px;
+    width: auto;
+    object-fit: contain;
+    filter: saturate(2.8) contrast(2.2); 
+}
+.titulo-top {
+    font-size: 1.3rem;
+    font-weight: bold;
+    text-align: center;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+
+.recovery-form-container {
+  position: fixed;        
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: #fff;
+  padding: 2rem;
+  border-radius: 16px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+  width: 100%;
+  max-width: 400px;
+}
+
+
+.recovery-form-container h2 {
+  text-align: center;
+  color: #333;
+  margin-bottom: 1.5rem;
+}
+
+.recovery-form-container {
+  background: #fff;
+  padding: 2rem;
+  border-radius: 16px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+  width: 100%;
+  max-width: 400px;
+  display: flex;
+  flex-direction: column;
+  align-items: center; 
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+.recovery-form-container input[type="email"],
+.recovery-form-container input[type="text"],
+.recovery-form-container input[type="password"] {
+  width: 80%; 
+  padding: 12px 16px;
+  margin-bottom: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 1rem;
+  transition: border-color 0.3s;
+  box-sizing: border-box;
+}
+
+.recovery-form-container input[type="email"]:focus,
+.recovery-form-container input[type="text"]:focus,
+.recovery-form-container input[type="password"]:focus {
+  border-color: #466205;
+  outline: none;
+}
+
+.recovery-form-container button {
+  width: 60%; 
+  padding: 10px;
+  background-color: #466205;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.recovery-form-container button:hover {
+  background-color: #5a7e0e;
+}
+
+
+.recovery-form-container .info-message {
+  margin-top: 1rem;
+  text-align: center;
+  font-size: 0.9rem;
+  color: #c0392b;
+}
+

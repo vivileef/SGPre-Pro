@@ -1,0 +1,407 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(to bottom right, #f8f9fa, #e9ecef);
+    background-attachment: fixed;
+    color: #333;
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    position: relative;
+    z-index: 1;
+    line-height: 1.6;
+    margin-top: 60px; /* Asegúrate de que coincida con la altura del top-bar */
+
+}
+
+body::after {
+    content: "";
+    background: url('LOGO-ULEAM.png') center/70% no-repeat;
+    opacity: 0.1;
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    z-index: -1;
+}
+
+/* ------------------ BARRA SUPERIOR ------------------ */
+.top-bar {
+    background: linear-gradient(135deg,#466205,#628908, #7fae10, #62a01a, #628908, #466205);
+    border-top: 2px solid #466205;  /* Borde más delgado para ahorrar espacio */
+    border-bottom: 3px solid #466205;
+    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.15); /* Sombra más pronunciada */
+    padding: 15px 20px;  /* Más espacio interno */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 80px;  /* Altura aumentada */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    gap: 20px;  /* Espacio entre logo y texto */
+}
+
+.logo-uleam {
+    height: 80px;
+    width: auto;
+    object-fit: contain;
+    filter: saturate(2.8) contrast(2.2); 
+}
+
+.titulo-top {
+    font-size: 1.3rem;
+    font-weight: bold;
+    text-align: center;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.card {
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    border-radius: 16px;
+    padding: 2rem;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
+}
+
+/* Sección de bienvenida */
+.welcome-section h2 {
+    color: #2c3e50;
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+    text-align: center;
+    font-weight: 700;
+}
+
+.user-info {
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+    padding: 1.5rem;
+    border-radius: 12px;
+    border-left: 4px solid #3498db;
+}
+
+.user-info p {
+    margin-bottom: 0.8rem;
+    font-size: 1.1rem;
+    color: #2c3e50;
+}
+
+.user-info span {
+    font-weight: 600;
+    color: #34495e;
+}
+
+/* Stats Section */
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.5rem;
+    margin-top: 1rem;
+}
+
+.stat-card {
+    background: linear-gradient(135deg, #74b9ff 0%, #0984e3 100%);
+    color: white;
+    padding: 1.5rem;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    box-shadow: 0 4px 15px rgba(116, 185, 255, 0.3);
+    transition: transform 0.3s ease;
+}
+
+.stat-card:hover {
+    transform: translateY(-3px);
+}
+
+.stat-icon {
+    font-size: 2.5rem;
+    opacity: 0.9;
+}
+
+.stat-number {
+    display: block;
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 0.2rem;
+}
+
+.stat-label {
+    font-size: 0.9rem;
+    opacity: 0.9;
+    font-weight: 500;
+}
+
+/* Progress Card */
+.progress-card {
+    background: linear-gradient(135deg, #00b894 0%, #00a085 100%);
+    color: white;
+    padding: 1.5rem;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    box-shadow: 0 4px 15px rgba(0, 184, 148, 0.3);
+}
+
+.progress-circle {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    border: 4px solid rgba(255, 255, 255, 0.3);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.progress-text {
+    font-size: 1.2rem;
+    font-weight: 700;
+}
+
+.progress-info p {
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+}
+
+/* Tutores Section */
+.tutores-section h3 {
+    color: #2c3e50;
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+    text-align: center;
+}
+
+.tutores-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+}
+
+.tutor-card {
+    background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%);
+    border-radius: 12px;
+    padding: 1.5rem;
+    box-shadow: 0 4px 15px rgba(252, 182, 159, 0.3);
+    transition: transform 0.3s ease;
+}
+
+.tutor-card:hover {
+    transform: translateY(-2px);
+}
+
+.tutor-header {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+.tutor-icon {
+    font-size: 2rem;
+}
+
+.tutor-header h4 {
+    color: #e17055;
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+
+.tutor-info p {
+    color: #2d3436;
+    margin-bottom: 0.5rem;
+}
+
+.no-asignado {
+    color: #636e72;
+    font-style: italic;
+    opacity: 0.8;
+}
+
+/* Panel doble */
+.panel-doble {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+}
+
+.actividades-section h3,
+.proximas-tareas-section h3 {
+    color: #2c3e50;
+    font-size: 1.3rem;
+    margin-bottom: 1.5rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid #3498db;
+}
+
+.actividades-lista,
+.tareas-lista {
+    max-height: 300px;
+    overflow-y: auto;
+}
+
+.mensaje-vacio {
+    text-align: center;
+    color: #95a5a6;
+    font-style: italic;
+    padding: 2rem;
+    background: #f8f9fa;
+    border-radius: 8px;
+    border: 2px dashed #bdc3c7;
+}
+
+/* Logout */
+.logout-container {
+    text-align: center;
+    margin-top: 1rem;
+}
+
+.logout-btn {
+    background: linear-gradient(135deg, #e74c3c 0%, #c0392b 100%);
+    color: white;
+    padding: 1rem 2rem;
+    border: none;
+    border-radius: 25px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(231, 76, 60, 0.3);
+}
+
+.logout-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(231, 76, 60, 0.4);
+}
+
+.logout-btn:active {
+    transform: translateY(0);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .container {
+        padding: 1rem;
+        gap: 1.5rem;
+    }
+    
+    .top-bar {
+        padding: 1rem;
+        flex-direction: column;
+        text-align: center;
+        gap: 0.5rem;
+    }
+    
+    .titulo-top {
+        font-size: 1.2rem;
+    }
+    
+    .panel-doble {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+    
+    .stats-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .tutores-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .card {
+        padding: 1.5rem;
+    }
+    
+    .welcome-section h2 {
+        font-size: 1.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        padding: 0.5rem;
+    }
+    
+    .card {
+        padding: 1rem;
+    }
+    
+    .stat-card,
+    .progress-card {
+        flex-direction: column;
+        text-align: center;
+        gap: 0.5rem;
+    }
+    
+    .progress-circle {
+        width: 60px;
+        height: 60px;
+    }
+    
+    .stat-icon {
+        font-size: 2rem;
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.card {
+    animation: fadeIn 0.6s ease-out;
+}
+
+.actividades-lista::-webkit-scrollbar,
+.tareas-lista::-webkit-scrollbar {
+    width: 6px;
+}
+
+.actividades-lista::-webkit-scrollbar-track,
+.tareas-lista::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 3px;
+}
+
+.actividades-lista::-webkit-scrollbar-thumb,
+.tareas-lista::-webkit-scrollbar-thumb {
+    background: #bdc3c7;
+    border-radius: 3px;
+}
+
+.actividades-lista::-webkit-scrollbar-thumb:hover,
+.tareas-lista::-webkit-scrollbar-thumb:hover {
+    background: #95a5a6;
+}

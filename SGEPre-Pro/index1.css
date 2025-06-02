@@ -1,0 +1,244 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(to bottom right, #f8f9fa, #e9ecef);
+    background-attachment: fixed;
+    color: #333;
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    position: relative;
+    z-index: 1;
+    line-height: 1.6;
+    margin-top: 60px; /* Asegúrate de que coincida con la altura del top-bar */
+
+}
+
+body::after {
+    content: "";
+    background: url('LOGO-ULEAM.png') center/70% no-repeat;
+    opacity: 0.1;
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    z-index: -1;
+}
+
+/* ------------------ BARRA SUPERIOR ------------------ */
+.top-bar {
+    background: linear-gradient(135deg,#466205,#628908, #7fae10, #62a01a, #628908, #466205);
+    border-top: 2px solid #466205;  /* Borde más delgado para ahorrar espacio */
+    border-bottom: 3px solid #466205;
+    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.15); /* Sombra más pronunciada */
+    padding: 15px 20px;  /* Más espacio interno */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 80px;  /* Altura aumentada */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    gap: 20px;  /* Espacio entre logo y texto */
+}
+
+.logo-uleam {
+    height: 80px;
+    width: auto;
+    object-fit: contain;
+    filter: saturate(2.8) contrast(2.2); 
+}
+
+.titulo-top {
+    font-size: 1.3rem;
+    font-weight: bold;
+    text-align: center;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+/* ------------------ CONTENEDOR PRINCIPAL ------------------ */
+.container {
+    width: 90%;
+    max-width: 600px;
+    margin: 120px auto 40px;
+    background: rgba(255, 255, 255, 0.95);
+    padding: 30px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    border-radius: 12px;
+    text-align: center;
+    position: relative;
+    z-index: 5;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+/* ------------------ TÍTULOS ------------------ */
+h1, h2, h3 {
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+    font-weight: 500;
+}
+
+h1 {
+    color: #c0392b;
+    font-size: 2rem;
+    margin-bottom: 20px;
+    font-weight: 600;
+}
+
+h2 {
+    color: #466205;
+    font-size: 1.5rem;
+    margin-bottom: 25px;
+}
+
+h3 {
+    color: #628908;
+    font-size: 1.3rem;
+    margin-bottom: 20px;
+}
+
+/* ------------------ BOTONES ------------------ */
+button {
+    padding: 12px 25px;
+    margin: 8px;
+    border: none;
+    background: #466205;
+    color: #fff;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+    min-width: 140px;
+}
+
+button:hover {
+    background: #c0392b;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+}
+
+button:active {
+    transform: translateY(0);
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+}
+
+/* Botón de volver */
+button:contains("⬅"),
+button[onclick*="goBack"] {
+    background: #6C757D;
+    font-size: 0.9rem;
+    min-width: 100px;
+    padding: 10px 20px;
+}
+
+button:contains("⬅"):hover,
+button[onclick*="goBack"]:hover {
+    background: #424242;
+}
+
+/* Botones de registro */
+.login-form button[onclick*="register"] {
+    background: #466205;
+}
+
+.login-form button[onclick*="register"]:hover {
+    background: #c0392b ;
+}
+
+/* ------------------ FORMULARIOS ------------------ */
+.login-form {
+    background: rgba(255, 255, 255, 0.8);
+    padding: 25px;
+    border-radius: 10px;
+    margin-top: 20px;
+    border: 1px solid #C8E6C9;
+}
+
+.login-form input {
+    display: block;
+    margin: 15px auto;
+    padding: 12px 15px;
+    width: 100%;
+    max-width: 350px;
+    border: 2px solid #DEE2E6;
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    background: white;
+}
+
+.login-form input:focus {
+    outline: none;
+    border-color: #c0392b;
+    box-shadow: 0 0 0 3px rgba(139, 195, 74, 0.2);
+    transform: scale(1.02);
+}
+
+.login-form button {
+    margin: 10px 5px;
+    min-width: 120px;
+}
+
+.login-form button[type="submit"] {
+    background: #466205;
+    font-weight: 600;
+}
+
+.login-form button[type="submit"]:hover {
+    background: #c0392b;
+}
+
+/* ------------------ UTILIDADES ------------------ */
+.hidden {
+    display: none !important;
+}
+
+.container > div {
+    animation: fadeIn 0.3s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.select-estilo {
+    width: 73%;
+    padding: 10px;
+    border: 2px solid #DEE2E6;
+    border-radius: 10px;
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+  .select-estilo:focus {
+    border-color: #c0392b;
+    box-shadow: 0 0 0 3px rgba(139, 195, 74, 0.2);
+    outline: none;
+ }
+
+.error-message {
+  color: red;
+  font-size: 0.8em;
+  display: block;
+  margin-top: 5px;
+}
+
+input.error, select.error {
+  border-color: red;
+}
+

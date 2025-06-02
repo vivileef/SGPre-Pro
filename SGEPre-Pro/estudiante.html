@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Perfil Estudiante</title>
+    <link rel="icon" href="LOGO-ULEAM.png"/>
+    <link rel="stylesheet" href="style2_estu.css">
+</head>
+<body>
+    <div class="top-bar">
+        <img src="LOGO-ULEAM-VERTICAL.png" alt="Logo ULEAM" class="logo-uleam">
+        <span class="titulo-top">Universidad Laica Eloy Alfaro de Manabí</span>
+    </div>
+    
+    <div class="container">
+        <div class="welcome-section">
+            <div class="card">
+                <div class="user-info-display">
+                    <h2>Panel de Estudiante</h2>
+                    <div class="user-info">
+                        <p>Bienvenido/a, <span id="nombre-estudiante">[Nombre]</span> <span id="apellido-estudiante"></span></p>
+                        <p>Email: <span id="email-estudiante">[Email]</span></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="stats-section">
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-icon">📚</div>
+                    <div class="stat-info">
+                        <span class="stat-number" id="practicas-activas">0</span>
+                        <span class="stat-label">Prácticas Activas</span>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon">✅</div>
+                    <div class="stat-info">
+                        <span class="stat-number" id="tareas-completadas">0</span>
+                        <span class="stat-label">Tareas Completadas</span>
+                    </div>
+                </div>
+                <div class="progress-card">
+                    <div class="progress-circle" id="progress-circle">
+                        <div class="progress-text">0%</div>
+                    </div>
+                    <div class="progress-info">
+                        <div class="progress-text">0%</div>
+                        <div id="empresa-asignada" class="empresa-info">Empresa: No asignada</div> <!-- Este es el nuevo -->
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="tutores-section">
+            <div class="card">
+                <h3>Mis Tutores Asignados</h3>
+                <div class="tutores-grid">
+                    <div class="tutor-card" id="tutor-academico-card">
+                        <div class="tutor-header">
+                            <div class="tutor-icon">👨‍🏫</div>
+                            <h4>Tutor Académico</h4>
+                        </div>
+                        <div id="tutor-academico-info" class="tutor-info">
+                            <p class="no-asignado">No asignado aún</p>
+                        </div>
+                    </div>
+                    
+                    <div class="tutor-card" id="tutor-empresarial-card">
+                        <div class="tutor-header">
+                            <div class="tutor-icon">🏢</div>
+                            <h4>Tutor Empresarial</h4>
+                        </div>
+                        <div id="tutor-empresarial-info" class="tutor-info">
+                            <p class="no-asignado">No asignado aún</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="panel-doble">
+            <div class="actividades-section">
+                <div class="card">
+                    <h3>Actividades Recientes</h3>
+                    <div class="activity-item">
+                    <strong>Hoy</strong>
+                    <p>Sesión iniciada correctamente</p>
+            </div>
+        </div>
+    </div>
+
+            <div class="proximas-tareas-section">
+                <div class="card">
+                    <h3>Próximas Tareas</h3>
+                    <div id="tareas-tutor-empresarial" class="tareas-lista">
+                        <div class="mensaje-vacio">No hay tareas asignadas</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="logout-container">
+            <button id="btn-logout" class="logout-btn">Cerrar Sesión</button>
+        </div>
+    </div>
+
+    <script src="estudiante.js"></script>
+</body>
+</html>
+
+
+
+  

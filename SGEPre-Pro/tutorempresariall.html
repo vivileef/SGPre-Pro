@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Perfil Tutor Empresarial</title>
+     <link rel="icon" href="LOGO-ULEAM.png"/>
+    <link rel="stylesheet" href="style4_empre.css">
+</head>
+<body>
+    <div class="top-bar">
+        <img src="LOGO-ULEAM-VERTICAL.png" alt="Logo ULEAM" class="logo-uleam">
+        <span class="titulo-top">Universidad Laica Eloy Alfaro de Manabí</span>
+    </div>
+
+    <div class="container">
+        <div class="welcome-section">
+            <div class="card">
+                <h2>Panel de Tutor Empresarial</h2>
+                <div class="user-info-display">
+                    <p>Bienvenido/a, <span id="nombre-empresa"></span></p>
+                    <p>Email: <span id="email-empresa"></span></p>
+                    <p>Empresa: <span id="empresa-empresa"></span></p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Sección de estadísticas -->
+        <div class="stats-section">
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-icon">👨‍🎓</div>
+                    <div class="stat-info">
+                        <span class="stat-number">0</span>
+                        <span class="stat-label">Estudiantes Asignados</span>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon">📋</div>
+                    <div class="stat-info">
+                        <span class="stat-number">0</span>
+                        <span class="stat-label">Proyectos Activos</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Sección de asignaciones -->
+        <div class="asignaciones-section">
+            <div class="card">
+                <div class="section-header">
+                    <h3>Estudiantes Asignados</h3>
+                    <button id="cargar-asignaciones-btn" class="btn-primary">🔄 Actualizar</button>
+                </div>
+                <div id="mis-asignaciones" class="asignaciones-container">
+                    <div class="loading-message">
+                        <p>📋 Cargando asignaciones...</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Sección de actividades -->
+        <div class="actividades-section">
+            <div class="card">
+                <h3>Actividades Recientes</h3>
+                <div id="actividades-lista" class="actividades-lista">
+                    <div class="actividad-item">
+                        <div class="actividad-fecha">Hoy</div>
+                        <div class="actividad-desc">Sesión iniciada correctamente</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <button id="btn-logout" class="logout-btn">Cerrar Sesión</button>
+    <script src="tutorempresariall.js"></script>
+</body>
+</html>

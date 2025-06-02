@@ -1,0 +1,197 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(to bottom right, #f8f9fa, #e9ecef);
+    background-attachment: fixed;
+    color: #333;
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    position: relative;
+    z-index: 1;
+    line-height: 1.6;
+    margin-top: 60px; /* Asegúrate de que coincida con la altura del top-bar */
+
+}
+
+body::after {
+    content: "";
+    background: url('LOGO-ULEAM.png') center/70% no-repeat;
+    opacity: 0.1;
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    z-index: -1;
+}
+
+.top-bar {
+    background: linear-gradient(135deg,#466205,#628908, #7fae10, #62a01a, #628908, #466205);
+    border-top: 2px solid #466205;  /* Borde más delgado para ahorrar espacio */
+    border-bottom: 3px solid #466205;
+    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.15); /* Sombra más pronunciada */
+    padding: 15px 20px;  /* Más espacio interno */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 80px;  /* Altura aumentada */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    gap: 20px;  /* Espacio entre logo y texto */
+}
+
+.logo-uleam {
+    height: 80px;
+    width: auto;
+    object-fit: contain;
+    filter: saturate(2.8) contrast(2.2); 
+}
+
+.titulo-top {
+    font-size: 1.3rem;
+    font-weight: bold;
+    text-align: center;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+.user-info {
+    font-size: 1rem;
+    font-style: italic;
+}
+
+.container {
+    padding: 2rem;
+    max-width: 1200px;
+    margin: auto;
+}
+
+.stats-section {
+    margin-bottom: 2rem;
+}
+
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1.5rem;
+}
+
+.stat-card {
+    background-color: #fff;
+    border-radius: 12px;
+    padding: 1.5rem;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.stat-icon {
+    font-size: 2rem;
+}
+
+.stat-number {
+    font-size: 1.5rem;
+    font-weight: bold;
+    display: block;
+}
+
+.stat-label {
+    font-size: 0.95rem;
+    color: #666;
+}
+
+/* Sección de asignaciones y actividades */
+.card {
+    background-color: #fff;
+    border-radius: 12px;
+    padding: 1.5rem;
+    margin-bottom: 2rem;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.section-header h3 {
+    margin: 0;
+    font-size: 1.2rem;
+}
+
+.btn-primary {
+    background-color: #2563eb;
+    color: white;
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 0.9rem;
+}
+
+.btn-primary:hover {
+    background-color: #1d4ed8;
+}
+
+/* Asignaciones */
+.asignaciones-container {
+    border-top: 1px solid #e5e7eb;
+    padding-top: 1rem;
+    min-height: 100px;
+}
+
+.loading-message {
+    color: #666;
+    text-align: center;
+    padding: 1rem;
+    font-style: italic;
+}
+
+.actividades-lista {
+    border-top: 1px solid #e5e7eb;
+    padding-top: 1rem;
+}
+
+.actividad-item {
+    padding: 0.75rem 0;
+    border-bottom: 1px solid #f0f0f0;
+    display: flex;
+    gap: 1rem;
+}
+
+.actividad-fecha {
+    font-weight: bold;
+    color: #1e40af;
+}
+
+.actividad-desc {
+    flex-grow: 1;
+}
+
+/* Botón de logout */
+.logout-btn {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #dc2626;
+    color: white;
+    padding: 0.6rem 1.2rem;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 0.95rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.logout-btn:hover {
+    background-color: #b91c1c;
+}

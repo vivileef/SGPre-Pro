@@ -1,0 +1,240 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(to bottom right, #f8f9fa, #e9ecef);
+    background-attachment: fixed;
+    color: #333;
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    position: relative;
+    z-index: 1;
+    line-height: 1.6;
+    margin-top: 60px; /* Asegúrate de que coincida con la altura del top-bar */
+
+}
+
+body::after {
+    content: "";
+    background: url('LOGO-ULEAM.png') center/70% no-repeat;
+    opacity: 0.1;
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    z-index: -1;
+}
+
+/* ------------------ BARRA SUPERIOR ------------------ */
+.top-bar {
+    background: linear-gradient(135deg,#466205,#628908, #7fae10, #62a01a, #628908, #466205);
+    border-top: 2px solid #466205;  /* Borde más delgado para ahorrar espacio */
+    border-bottom: 3px solid #466205;
+    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.15); /* Sombra más pronunciada */
+    padding: 15px 20px;  /* Más espacio interno */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 80px;  /* Altura aumentada */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    gap: 20px;  /* Espacio entre logo y texto */
+}
+
+.logo-uleam {
+    height: 80px;
+    width: auto;
+    object-fit: contain;
+    filter: saturate(2.8) contrast(2.2); 
+}
+
+.titulo-top {
+    font-size: 1.3rem;
+    font-weight: bold;
+    text-align: center;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+.container {
+    max-width: 1200px;
+    margin: auto;
+    padding: 2rem;
+}
+
+.card {
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    padding: 1.5rem 2rem;
+    margin-bottom: 2rem;
+    transition: transform 0.2s ease;
+}
+
+.card:hover {
+    transform: translateY(-2px);
+}
+
+h2, h3, h4, h5 {
+    color: #1e3a8a;
+    margin-bottom: 0.75rem;
+}
+
+.user-info-display p {
+    margin: 0.25rem 0;
+    font-size: 1rem;
+}
+
+.stats-section {
+    margin-top: 1.5rem;
+}
+
+.stats-grid {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.stat-card {
+    flex: 1 1 30%;
+    background-color: #e0f2fe;
+    padding: 1.2rem;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.05);
+}
+
+.stat-icon {
+    font-size: 2rem;
+}
+
+.stat-info {
+    display: flex;
+    flex-direction: column;
+}
+
+.stat-number {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: #0284c7;
+}
+
+.stat-label {
+    font-size: 0.95rem;
+    color: #475569;
+}
+
+.section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.btn-primary {
+    background-color: #2563eb;
+    color: white;
+    border: none;
+    padding: 0.6rem 1.2rem;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.btn-primary:hover {
+    background-color: #1d4ed8;
+}
+
+.asignacion-card {
+    border: 1px solid #cbd5e1;
+    border-radius: 10px;
+    padding: 1rem;
+    margin-bottom: 1.2rem;
+    background-color: #f8fafc;
+}
+
+.persona-info {
+    margin-top: 0.5rem;
+    padding-left: 1rem;
+}
+
+.persona-info h5 {
+    margin: 0.5rem 0;
+    font-weight: 600;
+    color: #0f172a;
+}
+
+.herramientas-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.herramienta-btn {
+    background-color: #e2e8f0;
+    border: none;
+    padding: 1rem;
+    border-radius: 10px;
+    cursor: pointer;
+    text-align: center;
+    transition: background-color 0.2s ease;
+}
+
+.herramienta-btn:hover {
+    background-color: #cbd5e1;
+}
+
+.herramienta-icon {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+    color: #0f172a;
+}
+
+.actividad-item {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    border-bottom: 1px solid #e2e8f0;
+    padding: 0.75rem 0;
+}
+
+.actividad-fecha {
+    font-weight: bold;
+    color: #2563eb;
+    min-width: 60px;
+}
+
+.actividad-desc {
+    flex: 1;
+}
+
+.logout-btn {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #dc2626;
+    color: white;
+    border: none;
+    padding: 0.75rem 1.2rem;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.logout-btn:hover {
+    background-color: #b91c1c;
+}
+
+.hidden {
+    display: none;
+}
